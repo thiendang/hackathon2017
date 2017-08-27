@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Call</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/jssip-2.0.6.min.js"></script>
+  <script type="text/javascript">
+  function onlyNumber(e){
+    var keyChar = e.keyCode || e.which;
+    if (keyChar >= 48 && keyChar <= 57) {
+      return true;
+    }
+    return false;
+  }
+  </script>
+</head>
+<body oncontextmenu="" onkeydown="">
+  <div class="remove-info">
+    <!-- <button class="btn btn-rm-info">Đăng xuất</button> -->
+    <p class="greeting"></p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="phone">
+        <div class="row1" style="">
+          <!-- <div class="first-time text-center">
+            <div class="logo"></div>
+            <div class="jumbotron thk-txt" style="background-color: transparent">
+              <h2 class="annouce-text">Vui lòng điền thông tin để gọi</h2>
+              <div class="info-area-1">
+                <input type="text" class="form-control form-input display-name-1" placeholder="Tên của bạn" />
+                <input type="text" class="form-control form-input display-phone-1" placeholder="Số điện thoại của bạn" onkeypress="return onlyNumber(event)" />
+                <button class="btn btn-save-info-1">Lưu</button>
+              </div>
+            </div>
+          </div> -->
+          
+          <div class="col-md-12 part1">
+            <div class="jumbotron text-center" style="margin-bottom: 13px;padding: 5px;background-color:transparent">
+              <!-- <h3 class="name"><strong></strong></h3> -->
+              <p class="duration"></p>
+            </div>
+            <!-- <div class="num-pad text-center">
+              <div class="row-pad">
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row-pad">
+                <div class="span4">
+                    <div class="num digitButton">
+                        <div class="txt">
+                            <p class="digit"></p>
+                            <span class="small">
+                                <p></p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row-pad">
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row-pad">
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                      <span class="small">
+                        <p></p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4">
+                  <div class="num digitButton">
+                    <div class="txt">
+                      <p class="digit"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+                      </div> -->
+          <div class="col-md-12 part2">
+            <div class="num-pad text-center">
+              <div class="row-pad">
+                  <div class="span4" style="margin:0">
+                      <div class="num2">
+                          <button class="btn flatbtn hangup">
+                              <img src="images/hang-up.png">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="grateful text-center">
+            <!-- <div class="logo"></div> -->
+            <div class="jumbotron thk-txt" style="background-color: transparent">
+               <h2 class="grateful-words">Cảm ơn bạn đã gọi!</h2>
+               <div class="info-area">
+                 <input type="text" class="form-control form-input display-name" placeholder="Tên của bạn" />
+                 <input type="text" class="form-control form-input display-phone" placeholder="Số điện thoại của bạn" onkeypress="return onlyNumber(event)" />
+                 <button class="btn btn-save-info">Lưu</button>
+               </div>
+            </div>
+            <div class="recall">
+                <button class="btn btn-recall" style="display: none">Gọi lại</button>
+            </div>
+          </div>
+          
+          <div class="error" style="display:none">
+            <div class="logo"></div>
+            <div class="err-container">
+              <p class="no-webrtc">Trình duyệt này chưa hỗ trợ tính năng gọi điện. Bạn có thể để lại số điện thoại bên dưới chúng tôi sẽ gọi lại cho bạn.</p>
+              <input class="form-control err-phone" placeholder="Nhập số diện thoại của bạn" />
+              <button class="btn btn-request-call">Yêu cầu gọi lại</button>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <video id="remoteView" autoplay _hidden=true></video>
+  <video id="selfView" autoplay muted="true" _hidden=true></video>
+  <script type="text/javascript">
+    (function(){
+      var displayName = "Call";
+      var hotline = "1002@0898587099.gcall.vn".split('@')[1].split('.')[0];
+      var Session = null;
+      var selfView, remoteView;
+      var localStream, remoteStream;
+      var soundPlayer;
+      var ua;
+      var endEl, part1El, part2El, recallBtn;
+      var countTime = 0, countInterval;
+      var staticServer = 'https://handout.gcall.vn/static/';
+      var localCanRenegotiateRTC = function(){
+          return JsSIP.rtcninja.canRenegotiate;
+      }
+
+      function call(){
+        ua.call("1001", {
+          pcConfig: null,
+          mediaConstraints: { audio: true, video: false },
+          extraHeaders: [
+              'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC())
+          ],
+          rtcOfferConstraints: {
+            offerToReceiveAudio: 1,
+            offerToReceiveVideo: 0
+          }
+        });
+      }
+
+      function newCall(e){
+        var session,
+          call = e.session,
+          uri = call.remote_identity.uri;
+          display_name = call.remote_identity.display_name || uri.user,
+          request = e.request;
+
+        Session = e;
+
+        if (call.diretion === 'incoming') {
+          if (call.request.getHeader('X-Can-Renegotiate') === 'false') {
+            call.data.remoteCanRenegotiateRTC = false;
+          } else {
+            call.data.remoteCanRenegotiateRTC = true;
+          }
+
+          soundPlayer.loop = true;
+          // playSound("");
+        }
+
+        call.on('confirmed', function(){
+          console.log('confirmed')
+        });
+
+        call.on('connecting', function(){
+          if (call.connection.getLocalStreams().length > 0) {
+            window.localStream = call.connection.getLocalStreams()[0];
+          }
+        });
+
+        call.on('progress',function(e){
+          if (e.originator === 'remote') {
+            soundPlayer.loop = true;
+            // soundPlayer.setAttribute("src", staticServer+"sounds/outgoing-call2.ogg");
+            // soundPlayer.play();
+            // playSound("");
+          }
+        });
+
+        call.on('accepted',function(e){
+          soundPlayer.pause();
+          soundPlayer.loop = false;
+          //Attach the streams to the views if it exists.
+          if (call.connection.getLocalStreams().length > 0) {
+            localStream = call.connection.getLocalStreams()[0];
+            selfView = JsSIP.rtcninja.attachMediaStream(selfView, localStream);
+            selfView.volume = 0;
+
+            // TMP
+            window.localStream = localStream;
+          }
+
+          if (e.originator === 'remote') {
+            if (e.response.getHeader('X-Can-Renegotiate') === 'false') {
+              call.data.remoteCanRenegotiateRTC = false;
+            } else {
+              call.data.remoteCanRenegotiateRTC = true;
+            }
+          }
+
+          countInterval = setInterval(function(){
+            countTime++;
+            document.querySelector('.duration').innerText = (
+              (countTime/60>=10?Math.floor(countTime/60):"0".concat(Math.floor(countTime/60)))
+              .concat(":")
+              .concat(countTime%60>=10?Math.floor(countTime%60):"0".concat(Math.floor(countTime%60)))
+            );
+          }, 1000);
+        });
+
+        call.on('addstream', function(e) {
+          console.log('Tryit: addstream()');
+          remoteStream = e.stream;
+          remoteView = JsSIP.rtcninja.attachMediaStream(remoteView, remoteStream);
+        });
+
+        // Failed
+        call.on('failed',function(e) {
+          soundPlayer.pause();
+          soundPlayer.loop = false;
+          // playSound("");
+
+          selfView.src = '';
+          remoteView.src = '';
+        });
+
+        // NewDTMF
+        // call.on('newDTMF',function(e) {
+        //   playSound("sounds/dialpad/" + e.dtmf.tone + ".ogg");
+        // });
+
+        // call.on('hold',function(e) {
+        //   playSound("sounds/dialpad/pound.ogg");
+        // });
+
+        // call.on('unhold',function(e) {
+        //   playSound("sounds/dialpad/pound.ogg");
+        // });
+
+        // Ended
+        call.on('ended', function(e) {console.log('call end');
+            Session = null;
+          selfView.src = '';
+          remoteView.src = '';
+
+          JsSIP.rtcninja.closeMediaStream(localStream);
+
+          // clearInterval(countInterval);
+          // document.querySelector('.duration').innerText = '00:00';
+
+          // document.querySelector('.grateful-words').innerText = 'Cảm ơn bạn đã gọi!';
+          // showEnd();
+
+          ua.stop();
+        });
+
+        // received UPDATE
+        call.on('update', function(e) {
+          var request = e.request;
+
+          if (! request.body) { return; }
+
+          if (! localCanRenegotiateRTC() || ! call.data.remoteCanRenegotiateRTC) {
+            console.warn('Tryit: UPDATE received, resetting PeerConnection');
+            call.connection.reset();
+            call.connection.addStream(localStream);
+          }
+        });
+
+        // received reINVITE
+        call.on('reinvite', function(e) {
+          var request = e.request;
+
+          if (! e.request.body) { return; }
+
+          /*
+          if (! localCanRenegotiateRTC() || ! call.data.remoteCanRenegotiateRTC) {
+            console.warn('Tryit: reINVITE received, resetting PeerConnection');
+            call.connection.reset();
+            call.connection.addStream(localStream);
+          }
+          */
+        });
+
+        // received REFER
+        call.on('refer', function(e) {
+          console.error('accepting the refer');
+          e.accept(function(session, request) {
+            newCall({
+              originator: 'remote',
+              session: session,
+              request: session.request
+            });
+          }, {
+            mediaStream: localStream
+          });
+        });
+
+        // received INVITE replacing this session
+        call.on('replaces', function(e) {
+          console.error('accepting the replaces');
+          e.accept(function(session, request) {
+            newCall({
+              originator: 'local',
+              session: session,
+              request: session.request
+            });
+          });
+        });
+      }
+      function dtmfClick(call, digit){
+        console.log('Tryit: dtmfClick');
+        if (Session) {
+          call.sendDTMF(digit);
+        }
+      }
+      function hangup(){
+        if (Session) {
+          let call = Session.session;
+          call.terminate();
+          Session = null;
+        }
+      }
+      function playSound(sound_file){
+        // soundPlayer.setAttribute("src", staticServer+sound_file);
+        // soundPlayer.play();
+      }
+      function clickDigit(digit){
+        if (Session) {
+          let call = Session.session;
+          dtmfClick(call, digit);
+        }
+      }
+      function showEnd(){
+        if (endEl.classList)
+          endEl.classList.add('fullheight');
+        else
+          endEl.className += ' ' + 'fullheight';
+        if (part1El.classList)
+          part1El.classList.add('top-100-mb');
+        else
+          part1El.className += ' ' + 'top-100-mb';
+        if (part2El.classList)
+          part2El.classList.add('top-100-mb');
+        else
+          part2El.className += ' ' + 'top-100-mb';
+      }
+      function hideEnd(){
+        if (endEl.classList)
+          endEl.classList.remove('fullheight');
+        else
+          endEl.className = endEl.className.replace(new RegExp('(^|\\b)' + 'fullheight'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        if (part1El.classList)
+          part1El.classList.remove('top-100-mb');
+        else
+          part1El.className = part1El.className.replace(new RegExp('(^|\\b)' + 'top-100-mb'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        if (part2El.classList)
+          part2El.classList.remove('top-100-mb');
+        else
+          part2El.className = part2El.className.replace(new RegExp('(^|\\b)' + 'top-100-mb'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        selfView = document.getElementById('selfView');
+        remoteView = document.getElementById('remoteView');
+        soundPlayer = document.createElement("audio");
+        soundPlayer.volume = 1;
+        endEl = document.querySelector('.grateful');
+        part1El = document.querySelector('.part1');
+        part2El = document.querySelector('.part2');
+        recallBtn = document.querySelector('.btn-recall');
+        let configuration = {
+          ws_servers: "wss://webrtc.vht.com.vn:8080",
+          uri: "1002@0898587099.gcall.vn",
+          password: "anh@#1002kas",
+          display_name: localStorage.getItem('gcall-sip-display-info') || displayName,
+          authorization_user: null,
+          register: true,
+          register_expires: null,
+          registrar_server: null,
+          no_answer_timeout: null,
+          session_timers: false,
+          use_preloaded_route: null,
+          connection_recovery_min_interval: null,
+          connection_recovery_max_interval: null,
+          hack_via_tcp: null,
+          hack_via_ws: null,
+          hack_ip_in_contact: null
+        };
+        function init(){
+          configuration.display_name = localStorage.getItem('gcall-sip-display-info') || displayName;
+          ua = new JsSIP.UA(configuration);
+
+          ua.on('connected', function(e){
+              console.log('connected');
+          });
+
+          ua.on('disconnected', function(e){
+              console.log('disconnected');
+              // recallBtn.style.display = 'block';
+          });
+
+          ua.on('newRTCSession', function(e){
+              console.log('newRTCSession');
+              countTime = 0;
+              newCall(e);
+              // hideEnd();
+              // recallBtn.style.display = 'none';
+          });
+
+          ua.on('newMessage', function(e){
+              console.log('newMessage');
+          });
+
+          ua.on('registered', function(e){
+              console.log('registered');
+              call();
+          });
+
+          ua.on('unregistered', function(e){
+              console.log('unregistered');
+          });
+
+          ua.on('registrationFailed', function(e){
+              console.log('registrationFailed');
+          });
+          
+          ua.start();
+        }
+
+        if (JsSIP.rtcninja.hasWebRTC()) {
+          // document.querySelector('.info-area').style.display = 'none';
+          //   document.querySelector('.first-time').style.display = 'none';
+          let info = "demo".replace(/ /g, '_') + '-' + "0000000";
+                localStorage.setItem('gcall-sip-display-name', "demo");
+                localStorage.setItem('gcall-sip-display-phone', "0000000");
+                localStorage.setItem('gcall-sip-display-info', info);
+                document.querySelector('.remove-info').style.display = 'block';
+                // document.querySelector('.greeting').innerText = 'Xin chào "'
+                //   + displayNameEl.value + '"';
+                document.querySelector('.info-area').style.display = 'none';
+                // document.querySelector('.first-time').style.display = 'none';
+                init();
+        } else {
+          part1El.style.display = 'none';
+          part2El.style.display = 'none';
+          document.querySelector('.first-time').style.display = 'none';
+          document.querySelector('.remove-info').style.display = 'none';
+          document.querySelector('.grateful').style.display = 'none';
+          document.querySelector('.error').style.display = 'block';
+          let errorDisplay = document.querySelector('.no-webrtc');
+          if (navigator.userAgent.indexOf('iPhone') > -1) {
+            errorDisplay.innerText = 'Các trình duyệt trên iPhone chưa hỗ trợ tính năng gọi điện. Bạn có thể để lại số điện thoại bên dưới chúng tôi sẽ gọi lại cho bạn.';
+          }
+          var errPhoneEl = document.querySelector('.err-phone');
+          document.querySelector('.btn-request-call').addEventListener('click', function(){
+            if (errPhoneEl.value.length > 6) {
+              let request = new XMLHttpRequest();
+              request.open('POST', '/api/call-logs', true);
+              request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+              request.send('callcenter_id='+hotline+'&status=callback&caller='+errPhoneEl.value);
+              errPhoneEl.style.display = 'none';
+              this.style.display = 'none';
+              document.querySelector('.no-webrtc').innerText = 'Ngay khi nhận được yêu cầu chúng tôi sẽ gọi lại cho bạn.';
+            }
+          });
+        }
+
+        var elements = document.querySelectorAll('.digitButton');
+        elements.forEach(function(element){
+          element.addEventListener('click', function(e){
+            clickDigit(this.querySelector('.txt .digit').textContent);
+          });
+        });
+
+        document.querySelector('.hangup').addEventListener('click', function(){
+          hangup();//showEnd();
+        });
+
+        // document.querySelector('.btn-save-info').addEventListener('click', function(){
+        //   let displayNameEl = document.querySelector('.display-name');
+        //   let displayPhoneEl = document.querySelector('.display-phone');
+        //   if (!displayNameEl.value.length) {
+        //     displayNameEl.style.borderColor = 'red';
+        //   } else {
+        //     displayNameEl.style.borderColor = '#bf55ea';
+        //   }
+        //   if (!displayPhoneEl.value.length) {
+        //     displayPhoneEl.style.borderColor = 'red';
+        //   } else {
+        //     displayPhoneEl.style.borderColor = '#bf55ea';
+        //   }
+        //   if (displayNameEl.value != '' && displayPhoneEl.value != '') {
+        //     let info = displayNameEl.value.replace(/ /g, '_') + '-' + displayPhoneEl.value;
+        //     localStorage.setItem('gcall-sip-display-name', displayNameEl.value);
+        //     localStorage.setItem('gcall-sip-display-phone', displayPhoneEl.value);
+        //     localStorage.setItem('gcall-sip-display-info', info);
+        //     // document.querySelector('.greeting').innerText = 'Xin chào "'
+        //     //   + displayNameEl.value + '"';
+        //     document.querySelector('.info-area').style.display = 'none';
+        //     document.querySelector('.remove-info').style.display = 'block';
+        //     displayNameEl.value = '';
+        //     displayPhoneEl.value = '';
+        //     displayNameEl.style.borderColor = '#bf55ea';
+        //     displayPhoneEl.style.borderColor = '#bf55ea';
+        //     document.querySelector('.grateful-words').style.fontSize = '19px';
+        //     document.querySelector('.grateful-words').innerText = 'Đã lưu thông tin.';
+        //   }
+        // });
+
+        // document.querySelector('.btn-rm-info').addEventListener('click', function(){
+        //   localStorage.removeItem('gcall-sip-display-info');
+        //   localStorage.removeItem('gcall-sip-display-name');
+        //   localStorage.removeItem('gcall-sip-display-phone');
+        //   document.querySelector('.remove-info').style.display = 'none';
+        //   document.querySelector('.info-area').style.display = 'block';
+        //   document.querySelector('.grateful-words').style.fontSize = '15px';
+        //   document.querySelector('.grateful-words').innerText = 'Để được hỗ trợ tốt hơn. Vui lòng cho chúng tôi biết thêm thông tin của bạn.';
+        // });
+
+        recallBtn.addEventListener('click', function(){
+          let request = new XMLHttpRequest();
+          request.open('GET', '/api/call?callcenter_id='+hotline, true);
+          request.send();
+          init();
+        });
+
+        // document.querySelector('.name').innerText = hotline;
+      });
+    })();
+  </script>
+</body>
+</html>
